@@ -1,9 +1,9 @@
 <template>
   <TopNavBar />
   <SlideNavMenu class="bg-transparent" />
-  <content class="row">
-    <PersistentNavMenu class="col-3 d-none d-md-block" />
-    <router-view class="col" />
+  <PersistentNavMenu class="d-none d-md-block" />
+  <content class="d-md-flex flex-row">
+    <router-view class="m-auto" />
   </content>
 </template>
 
@@ -29,12 +29,13 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-nav a.router-link-exact-active {
-  color: #42b983;
+
+@media screen and (min-width: 768px) {
+  content {
+    margin-left: 250px;
+  }
 }
 </style>
