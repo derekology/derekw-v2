@@ -1,27 +1,28 @@
 <template>
-  <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark vh-100">
-    <a
-      href="/"
-      class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"
-    >
-    </a>
+  <div
+    id="sidebar"
+    class="d-flex flex-column flex-shrink-0 p-3 text-white vh-100 position-fixed"
+  >
     <ul class="nav nav-pills flex-column mb-auto">
-      <li class="nav-item">
-        <a href="#" class="nav-link active" aria-current="page"> Home </a>
+      <li class="nav-item mt-2">
+        <router-link
+          to="/"
+          class="nav-link text-white text-start"
+          aria-current="page"
+        >
+          Home
+        </router-link>
       </li>
-      <li>
-        <a href="#" class="nav-link text-white"> Dashboard </a>
-      </li>
-      <li>
-        <a href="#" class="nav-link text-white"> Orders </a>
-      </li>
-      <li>
-        <a href="#" class="nav-link text-white"> Products </a>
-      </li>
-      <li>
-        <a href="#" class="nav-link text-white"> Customers </a>
+      <li class="nav-item mt-2">
+        <router-link to="/about" class="nav-link text-white text-start">
+          About
+        </router-link>
       </li>
     </ul>
+    <hr />
+
+    <PostFeed />
+
     <hr />
     <div class="dropdown">
       <a
@@ -58,9 +59,28 @@
 
 <script>
 import { Vue } from "vue-class-component";
+import PostFeed from "@/components/PostFeed.vue";
 
-export default class NavSidebar extends Vue {}
+export default {
+  name: "NavSidebar",
+  components: {
+    PostFeed,
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped></style>
+<style scoped>
+#sidebar {
+  background-color: #222222;
+  border-top: 5px #dd3333 solid;
+  width: 250px;
+}
+a.router-link-active {
+  background-color: #ffffff17;
+}
+
+a:hover {
+  background-color: #ffffff08;
+}
+</style>
