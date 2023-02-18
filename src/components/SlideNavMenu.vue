@@ -7,7 +7,9 @@
       aria-labelledby="sidebarLabel"
     >
       <div id="sidebar-collapse">
-        <NavSidebar />
+        <nav>
+          <NavSidebar />
+        </nav>
       </div>
     </div>
   </div>
