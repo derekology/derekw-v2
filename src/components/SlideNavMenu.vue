@@ -1,7 +1,7 @@
 <template>
   <div>
     <div
-      class="offcanvas offcanvas-start"
+      class="offcanvas offcanvas-start bg-transparent"
       tabindex="-1"
       id="sidebar-collapse"
       aria-labelledby="sidebarLabel"
