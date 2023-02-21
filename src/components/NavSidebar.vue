@@ -3,7 +3,16 @@
     id="sidebar"
     class="d-flex flex-column flex-shrink-0 text-white vh-100 position-fixed"
   >
-    <PostFeed class="mt-2" />
+    <div>
+      <router-link
+        to="/"
+        class="nav-link text-white text-start text-center d-none d-md-block"
+        aria-current="page"
+        ><HeaderLogo />
+      </router-link>
+    </div>
+
+    <PostFeed class="mt-0" />
 
     <hr class="mb-0" />
 
@@ -12,20 +21,20 @@
 </template>
 
 <script>
-import { Vue } from "vue-class-component";
 import PostFeed from "@/components/PostFeed.vue";
 import HorizontalMenu from "@/components/HorizontalMenu.vue";
+import HeaderLogo from "@/components/HeaderLogo.vue";
 
 export default {
   name: "NavSidebar",
   components: {
     PostFeed,
     HorizontalMenu,
+    HeaderLogo,
   },
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 #sidebar {
   background-color: #222222;
