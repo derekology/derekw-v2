@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <p>{{ content }}</p>
-  </div>
+  <div v-html="content"></div>
 </template>
 
 <script lang="ts">
@@ -17,5 +15,10 @@ export default class SinglePostContent extends Vue {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped></style>
+<style scoped>
+img,
+svg {
+  max-width: 100% !important;
+  height: auto;
+}
+</style>
