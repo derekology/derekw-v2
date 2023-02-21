@@ -9,7 +9,6 @@
 </template>
 
 <script>
-import { Vue } from "vue-class-component";
 import NavSidebar from "@/components/NavSidebar.vue";
 
 export default {
@@ -20,5 +19,4 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped></style>
