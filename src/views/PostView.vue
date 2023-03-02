@@ -1,33 +1,43 @@
 <template>
   <div>
-    <LoadingContent
-      class="mt-4"
-      v-if="this.pageSlug != this.postSlug"
-      msg="Loading content..."
-    />
-    <div v-else>
-      <SinglePostHeader
-        :title="postTitle"
-        :subtitle="postSubtitle"
-        :imageUrl="postImage"
+    <main>
+      <div id="top">
+        <div v-if="this.pageSlug == this.postSlug">
+          <SinglePostHeader
+            :title="postTitle"
+            :subtitle="postSubtitle"
+            :imageUrl="postImage"
+          />
+        </div>
+      </div>
+      <div id="loader" v-if="this.pageSlug != this.postSlug">
+        <HeaderLogo />
+        <ContentLoader class="mt-5" msg="Loading content..." />
+      </div>
+      <SinglePostContent
+        v-if="this.pageSlug == this.postSlug"
+        :content="postContent"
       />
-      <SinglePostContent :content="postContent" />
-    </div>
+    </main>
   </div>
 </template>
 
 <script>
-import SinglePostHeader from "@/components/SinglePostHeader.vue";
-import SinglePostContent from "@/components/SinglePostContent.vue";
-import LoadingContent from "@/components/LoadingContent.vue";
+import { defineComponent } from "vue";
+import { useHead } from "@vueuse/head";
+import SinglePostHeader from "@/components/singlepost/SinglePostHeader.vue";
+import SinglePostContent from "@/components/singlepost/SinglePostContent.vue";
+import ContentLoader from "@/components/global/ContentLoader.vue";
+import HeaderLogo from "@/components/global/HeaderLogo.vue";
 
-export default {
+export default defineComponent({
   name: "PostView",
 
   components: {
     SinglePostHeader,
     SinglePostContent,
-    LoadingContent,
+    ContentLoader,
+    HeaderLogo,
   },
 
   data() {
@@ -44,7 +54,11 @@ export default {
     };
   },
 
-  beforeMount: function () {
+  setup() {
+    useHead({});
+  },
+
+  created: function () {
     this.getPost();
   },
 
@@ -85,5 +99,20 @@ export default {
       parsePost();
     },
   },
-};
+});
 </script>
+
+<style scoped>
+/* main {
+  margin: 40px;
+  max-width: 900px;
+} */
+
+#loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 25vh;
+}
+</style>
