@@ -1,6 +1,6 @@
 <template>
   <TopNavBar />
-  <SlideNavMenu class="bg-transparent" />
+  <SlideNavMenu />
   <PersistentNavMenu class="d-none d-md-block" />
   <content class="d-md-flex flex-row">
     <router-view class="m-auto" />
@@ -8,9 +8,10 @@
 </template>
 
 <script lang="ts">
-import TopNavBar from "@/components/TopNavBar.vue";
-import SlideNavMenu from "@/components/SlideNavMenu.vue";
-import PersistentNavMenu from "@/components/PersistentNavMenu.vue";
+import { useHead } from "@vueuse/head";
+import TopNavBar from "@/components/navigation/TopNavBar.vue";
+import SlideNavMenu from "@/components/singlepost/SlideNavMenu.vue";
+import PersistentNavMenu from "@/components/navigation/PersistentNavMenu.vue";
 
 export default {
   name: "App",
@@ -18,6 +19,22 @@ export default {
     TopNavBar,
     SlideNavMenu,
     PersistentNavMenu,
+  },
+
+  setup() {
+    useHead({
+      title: "Derek Woo",
+      meta: [
+        {
+          name: `robots`,
+          content: `noindex`,
+        },
+        {
+          name: `robots`,
+          content: `nofollow`,
+        },
+      ],
+    });
   },
 };
 </script>
@@ -33,9 +50,15 @@ export default {
   overflow-x: hidden;
 }
 
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
 @media screen and (min-width: 768px) {
   content {
-    margin-left: 250px;
+    margin-left: 230px;
   }
 }
 </style>
