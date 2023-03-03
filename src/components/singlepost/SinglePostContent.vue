@@ -1,5 +1,5 @@
 <template>
-  <div id="content">
+  <div id="content" class="m-auto">
     <div v-html="content"></div>
   </div>
 </template>
@@ -17,11 +17,14 @@ export default defineComponent({
 </script>
 
 <style scoped>
-/* #content {
+#content {
   margin: 40px;
-  max-width: 900px;
+  padding-top: 3em;
+  max-width: 740px;
   text-align: left;
-} */
+  font-size: 18px;
+  line-height: 1.8em;
+}
 
 img,
 svg {
