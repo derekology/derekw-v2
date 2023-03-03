@@ -133,7 +133,7 @@ a:hover {
 
   a.router-link-active .post-title {
     font-size: 125%;
-    font-weight: 900;
+    font-weight: 700;
   }
 }
 </style>
