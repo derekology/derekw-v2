@@ -17,13 +17,13 @@
       ></button>
     </div>
     <div>
-      <!-- <router-link
+      <router-link
         to="/"
         class="nav-link text-white text-start text-center d-none d-md-block"
         aria-current="page"
-        ><HeaderLogo />
-      </router-link> -->
-      <span>Latest Posts</span>
+        ><HeaderLogoHorizontal />
+      </router-link>
+      <!-- <span>Latest Posts</span> -->
     </div>
 
     <PostFeed class="mt-0" />
@@ -38,14 +38,16 @@
 import { defineComponent } from "vue";
 import PostFeed from "@/components/navigation/PostFeed.vue";
 import HorizontalMenu from "@/components/navigation/HorizontalMenu.vue";
-import HeaderLogo from "@/components/global/HeaderLogo.vue";
+import HeaderLogoHorizontal from "@/components/global/HeaderLogoHorizontal.vue";
+// import HeaderLogo from "@/components/global/HeaderLogo.vue";
 
 export default defineComponent({
   name: "NavSidebar",
   components: {
     PostFeed,
     HorizontalMenu,
-    HeaderLogo,
+    HeaderLogoHorizontal,
+    // HeaderLogo,
   },
 
   updated() {
