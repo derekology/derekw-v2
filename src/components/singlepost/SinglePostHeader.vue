@@ -100,7 +100,7 @@ export default defineComponent({
   background-color: #000000b6;
   padding: 10px 20px 10px 35px;
   line-height: 2em;
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(4px);
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
