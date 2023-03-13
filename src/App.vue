@@ -10,7 +10,7 @@
 <script lang="ts">
 import { useHead } from "@vueuse/head";
 import TopNavBar from "@/components/navigation/TopNavBar.vue";
-import SlideNavMenu from "@/components/singlepost/SlideNavMenu.vue";
+import SlideNavMenu from "@/components/navigation/SlideNavMenu.vue";
 import PersistentNavMenu from "@/components/navigation/PersistentNavMenu.vue";
 
 export default {
@@ -79,16 +79,33 @@ h6 {
   text-align: center;
 }
 
-img,
-svg {
+#post-feed::-webkit-scrollbar {
+  display: none;
+}
+
+#post-feed {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+img {
   max-width: 100%;
   height: auto;
   margin: 10px;
 }
 
+content {
+  margin-top: 60px;
+}
+
+/* .offcanvas-backdrop {
+  display: none;
+} */
+
 @media screen and (min-width: 768px) {
   content {
     margin-left: 230px;
+    margin-top: 0px;
   }
 }
 </style>
