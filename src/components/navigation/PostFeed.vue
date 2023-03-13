@@ -95,13 +95,6 @@ export default defineComponent({
 #post-feed.list-group-item {
   background-color: none;
 }
-#post-feed::-webkit-scrollbar {
-  display: none;
-}
-#post-feed {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
 a.router-link-exact-active {
   background-color: #ffffff17;
 }
@@ -124,6 +117,7 @@ a:hover {
     border-bottom-right-radius: 0 !important;
     padding-top: 15px;
     padding-bottom: 15px;
+    padding-right: 21px;
   }
 
   a.router-link-active .post-title,
