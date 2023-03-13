@@ -92,17 +92,27 @@ export default defineComponent({
   height: 100%;
 }
 
+#meta {
+  background-color: #000000b6;
+  padding: 0px 25px;
+}
+
 #top #title {
   color: #ffffff;
-  font-size: 56px;
+  font-size: 6vw;
   text-transform: uppercase;
-  letter-spacing: 18px;
-  background-color: #000000b6;
-  padding: 10px 20px 10px 35px;
+  letter-spacing: 9px;
   line-height: 2em;
   backdrop-filter: blur(4px);
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
+}
+
+@media (min-width: 768px) {
+  #top #title {
+    font-size: 3vw;
+    letter-spacing: 10px;
+  }
 }
 </style>
