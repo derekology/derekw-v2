@@ -1,14 +1,9 @@
 <template>
   <div id="sidebar" class="d-flex flex-column flex-shrink-0 text-white">
     <div class="d-md-none offcanvas-header pt-0 pb-0">
-      <h5 class="offcanvas-title" id="sidebarLabel">
-        <router-link
-          to="/"
-          class="nav-link text-white text-start text-center d-md-none"
-          aria-current="page"
-          ><HeaderLogo />
-        </router-link>
-      </h5>
+      <span class="offcanvas-title mt-1 ms-2" id="sidebar-label"
+        >Latest Posts</span
+      >
       <button
         type="button"
         class="btn-close text-reset me-2"
@@ -74,6 +69,14 @@ export default defineComponent({
 .offcanvas-header .btn-close {
   background-color: #ffffff !important;
   font-size: 75%;
+  margin: 10px 5px;
+}
+
+#sidebar-label {
+  font-size: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 @media screen and (min-width: 768px) {
