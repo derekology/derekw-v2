@@ -98,6 +98,11 @@ content {
   margin-top: 60px;
 }
 
+figcaption {
+  font-size: 75%;
+  font-style: italic;
+}
+
 /* .offcanvas-backdrop {
   display: none;
 } */
